@@ -1,0 +1,28 @@
+[Unit]
+Description=DingTalk Home Assistant Gateway
+After=network.target
+Documentation=https://github.com/yanfeng17/dingtalk-ha-gateway
+
+[Service]
+Type=simple
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/home/ubuntu/dingtalk-ha-gateway
+Environment="PATH=/home/ubuntu/dingtalk-ha-gateway/venv/bin"
+ExecStart=/home/ubuntu/dingtalk-ha-gateway/venv/bin/python app.py
+
+# 自动重启配置
+Restart=always
+RestartSec=10
+
+# 日志配置
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=dingtalk-gateway
+
+# 安全限制（可选，增强安全性）
+# NoNewPrivileges=true
+# PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
