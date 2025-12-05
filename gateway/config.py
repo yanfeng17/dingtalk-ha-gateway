@@ -7,14 +7,15 @@ from dataclasses import dataclass
 from typing import Literal
 from pathlib import Path
 
-# Load .env file if exists
+# Load .env file if exists (for standalone mode)
+# In Addon mode, environment variables are set by run.sh
 try:
     from dotenv import load_dotenv
     env_path = Path(__file__).parent.parent / ".env"
     if env_path.exists():
         load_dotenv(env_path)
-except ImportError:
-    pass  # python-dotenv not installed
+except (ImportError, Exception):
+    pass  # python-dotenv not installed or .env not found (normal in Addon mode)
 
 
 @dataclass(frozen=True)

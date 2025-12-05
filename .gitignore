@@ -73,3 +73,7 @@ dingtalk_*.json
 # Backup files
 *.bak
 *~
+
+# Addon placeholder files (replace with actual images before publishing)
+icon.png
+logo.png

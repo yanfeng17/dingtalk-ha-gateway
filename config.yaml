@@ -1,0 +1,31 @@
+name: "DingTalk Gateway"
+version: "0.1.1"
+slug: "dingtalk_gateway"
+description: "DingTalk message gateway with Stream push support for Home Assistant"
+arch:
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+  - i386
+url: "https://github.com/yanfeng17/dingtalk-ha-gateway"
+startup: "application"
+boot: "auto"
+init: false
+ports:
+  8099/tcp: 8099
+ports_description:
+  8099/tcp: "Gateway API port"
+options:
+  dingtalk_client_id: ""
+  dingtalk_client_secret: ""
+  dingtalk_agent_id: ""
+  use_stream: true
+  gateway_token: ""
+schema:
+  dingtalk_client_id: "str"
+  dingtalk_client_secret: "password"
+  dingtalk_agent_id: "str"
+  use_stream: "bool"
+  gateway_token: "password?"
+  webhook_secret: "password?"

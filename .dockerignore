@@ -1,0 +1,45 @@
+# Version control
+.git
+.gitignore
+
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Environment files
+.env
+.env.example
+
+# Documentation (except ADDON_README.md)
+README.md
+AWS_DEPLOYMENT.md
+DEPLOYMENT_GUIDE.md
+MESSAGE_MODES.md
+MIGRATION_GUIDE.md
+TROUBLESHOOTING.md
+LICENSE
+
+# Scripts and tests
+deploy.sh
+test_*.py
+dingtalk-gateway.service
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
